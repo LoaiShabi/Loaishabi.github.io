@@ -1,0 +1,129 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background:black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* Main title */
+.name-title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(255, 166, 0);
+}
+
+/* Intro div */
+div {
+  text-align: center;
+  border: 2px dotted rgb(255, 153, 0);
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 700px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Headings */
+h1 {
+  color: rgb(255, 153, 0);
+  text-align: left;
+  margin: 20px;
+}
+
+h2 {
+  color: white;
+  margin: 15px 20px;
+}
+
+/* Paragraphs */
+p {
+  color: white;
+  margin: 10px 20px;
+}
+
+/* Navigation bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:rgb(255, 153, 0);
+  border-bottom: 2px solid #ddd;
+  color: white;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+ul li a:hover {
+  background-color: #ddd;
+}
+
+/* Skills & education lists */
+ul li {
+  margin: 5px 0;
+}
+
+/* Logo in corner */
+.logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px;   /* keep size */
+  height: auto;   /* maintain aspect ratio */
+}
+
+.education1 {
+  text-align: center;
+  border: 2px dotted rgb(255, 153, 0);
+  padding: 20px;
+  width: 30%;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  float: left;   
+         /* goes to the left */
+  margin: 40px;
+}
+
+.experience1 {
+  text-align: center;
+  border: 2px dotted rgb(255, 153, 0);
+  padding: 20px;
+  width: 300px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  float: left;
+  margin: 40px auto;    /* center horizontally */
+}
+
+.skills1 {
+  text-align: center;
+  border: 2px dotted rgb(255, 153, 0);
+  padding: 20px;
+  width: 300px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  float: inline; 
+        /* goes to the right */
+  margin: 40px;
+  margin-right: 100px;
+}
