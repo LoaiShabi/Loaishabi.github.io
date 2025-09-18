@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="dicecss.css">
+    <title>Dice Game</title>
+</head>
+<body>
+    <h1>Roll Dice</h1>
+
+    Dice 1: <input type="text" id="dice1" value="1">
+    Dice 2: <input type="text" id="dice2" value="1">
+    <br><br>
+    <button onclick="rollDice()">Try it</button>
+
+    <script>
+        function rollDice() {
+            var dice1 = Math.floor((Math.random() * 6) + 1);
+            var dice2 = Math.floor((Math.random() * 6) + 1);
+
+            document.getElementById("dice1").value = dice1;
+            document.getElementById("dice2").value = dice2;
+        }
+    </script>
+</body>
+</html>

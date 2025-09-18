@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="logincss.css">
+  <title>Login & Email Validator</title>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Login Form</h2>
+
+  <label for="username">Username:</label>
+  <input id="username" type="text" placeholder="Enter username">
+
+  <label for="password">Password:</label>
+  <input id="password" type="password" placeholder="Enter password">
+
+  <label for="email">Email:</label>
+  <input id="email" type="text" placeholder="you@example.com">
+
+  <button onclick="checkForm()">Submit</button>
+
+  <p id="result"></p>
+</div>
+
+<script>
+function checkForm() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var email = document.getElementById("email").value;
+  var result = document.getElementById("result");
+
+  email = email.trim();
+
+  if (username == "") {
+    result.innerHTML = " Please enter a username";
+  } else if (password == "") {
+    result.innerHTML = " Please enter a password";
+  } else if (email == "") {
+    result.innerHTML = " Please type an email";
+  } else if (email.indexOf("@") == -1) {
+    result.innerHTML = " Missing @ symbol in email";
+  } else if (email.indexOf(".") == -1) {
+    result.innerHTML = " Missing dot (.) in email";
+  } else if (email.indexOf("@") < 1) {
+    result.innerHTML = " @ cannot be at the start of email";
+  } else {
+    result.innerHTML = " Form submitted successfully!";
+  }
+}
+</script>
+
+</body>
+</html>
