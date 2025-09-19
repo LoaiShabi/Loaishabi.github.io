@@ -1,41 +1,62 @@
 
 <!DOCTYPE html>
 <html>
-     <head>
-          <link rel="stylesheet" href="mystylecss.css">
-          
-     </head>
-     <body>
-          <ul>
-          
+<head>
+  <link rel="stylesheet" href="mystylecss.css">
+</head>
+<body>
+  <ul>
+    <div class="navbar">
+      <li><a href="portfolio03.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </div>
+  </ul>
 
+  <div id="form-container">
+    <form onsubmit="return checkForm()">
+      <h1>Fill out the form below</h1>
+      <label for="firstName" id="e">First name:</label><br>
+      <input type="text" id="firstName" class="text-box" name="firstName" placeholder="Enter your First Name"><br>
+      <label for="LastName">Last Name:</label><br>
+      <input type="text" id="lastName" class="text-box" name="lastName" placeholder="Enter your Last Name"><br>
+      <label for="Email">Email:</label><br>
+      <input type="text" id="Email" class="text-box" name="Email" placeholder="Enter your email..."><br>
+      <label for="Query">Query:</label><br>
+      <textarea type="text" id="Query" class="text-box" name="Query" rows="6" required placeholder="Query"></textarea>
+      <br><br>
+      <input type="Submit" id="Submit" Value="Submit"><br>
+      <!-- FIX: Added result area -->
+      <p id="result"></p>
+    </form>
 
-               <div class="navbar">
-               <li><a href="#home">Home</a></li>
-               <li><a href="about.html">About</a></li>
-               <li><a href="#Projects.">Projects</a></li>
-               <li><a href="contact.html">Contact</a></li>
-               </div>
-          </ul>
-          <div id="form-container">
-               <form >
-                    <h1>Fill out the form below</h1>
-                    <label for="firstName" id="e">First name:</label><br>
-                    <input type="text" id="firstName" class="text-box" name="firstName" placeholder="Enter your First Name" ><br>
-                    <label for="LastName">Last Name:</label><br>
-                    <input type="text" id="lastName"class="text-box"  name="lastName" placeholder="Enter your Last Name"><br>
-                    <label for="Email">Email:</label><br>
-                    <input type="text" id="Email"class="text-box"  name="Email" placeholder="Enter your email..."><br>
-                    <label for="Query">Query:</label><br>
-                    <textarea type="text" id="Query"class="text-box"  name="Query" rows="6" required placeholder="Query"></textarea>
-<br>
-                    <br>
-                    <input type="Submit" id="Submit" Value="Submit"  ><br>
-               
+    <script>
+      function checkForm() {
+        var email = document.getElementById("Email").value;  
+        var result = document.getElementById("result"); // FIX: Added result reference
+        email = email.trim();
 
-               
-               </form>
-               
-     <img class="logo" src="company.png" width="100px" height="100px" alt="Company Logo">
-     </body>
+        if (email == "") {
+          result.innerHTML = " Please type an email";
+          return false;
+        } else if (email.indexOf("@") == -1) {
+          result.innerHTML = " Missing @ symbol in email";
+          return false;
+        } else if (email.indexOf(".") == -1) {
+          result.innerHTML = " Missing dot (.) in email";
+          return false;
+        } else if (email.indexOf("@") < 1) {
+          result.innerHTML = " @ cannot be at the start of email";
+          return false;
+        } else {
+          result.innerHTML = " Form submitted successfully!";
+          return false; // keeps page from reloading
+        }
+      }
+    </script>
+
+    <img class="logo" src="Loai.png" width="100px" height="100px" alt="Company Logo">
+  </div>
+</body>
 </html>
