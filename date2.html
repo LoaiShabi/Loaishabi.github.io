@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="datecss.css">
+  <title>Days Calculator</title>
+</head>
+<body>
+<script>
+    function calcDate() {
+        var date1 = new Date(document.forms["Form1"]["date1"].value);
+        var date2 = new Date(document.forms["Form1"]["date2"].value);
+        
+        var diffTime = Math.abs(date2 - date1); 
+        var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        console.log("Calculating...");
+        console.log(date1);
+        console.log(date2);
+        console.log(diffDays);
+        console.log(diffTime);
+
+        document.getElementById("answer").value = "Result: " + diffDays.toString() + " Days";
+
+        return false; // prevents the form from refreshing the page
+    }
+</script>
+
+<h1>Days Calculator</h1>
+<div>
+  <form name="Form1" action="" method="post" onsubmit="return calcDate()">
+
+    <label for="date1">Choose first date:</label>
+    <input type="date" id="date1" name="date1" required>
+    <br><br>
+
+    <label for="date2">Choose second date:</label>
+    <input type="date" id="date2" name="date2" required>
+    <br><br>
+
+    <input type="submit" value="Calculate">
+    <br><br>
+
+    <input type="text" id="answer" name="answer" placeholder="Your result" readonly>
+
+  </form>
+</div>
+</body>
+</html>
